@@ -200,7 +200,7 @@ const AddToFind = () => {
                 placeholder="Bio"
               ></textarea>
             </div>
-            <button className="btn btn-neutral mt-4 col-span-2">Login</button>
+            <button className="btn  bg-[#5EBB2B] mt-4 col-span-2 font-bold text-white">Add Roommate</button>
           </form>
         </div>
       </div>
