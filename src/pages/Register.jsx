@@ -4,11 +4,13 @@ import GoogleLogin from "../components/GoogleLogin";
 import { Link } from "react-router";
 import { AuthContext } from "../Layout/AuthProvider";
 import Swal from "sweetalert2";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 
 const Register = () => {
   const { createUser, setUser, user, updataUserProfile } =
     useContext(AuthContext);
   const [validPass, setValidPass] = useState("");
+  const[eye,setEye] = useState(false);
   const isValidPassword = (password) =>
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{6,}$/.test(password);
   const handleRegister = (e) => {
@@ -81,13 +83,21 @@ const Register = () => {
               required
             />
             <label className="label">Password</label>
-            <input
-              type="password"
-              name="password"
-              className="input"
-              placeholder="Password"
-              required
-            />
+            <div className="relative">
+              <input
+                type="password"
+                name="password"
+                className="input"
+                placeholder="Password"
+                required
+              />
+              <div
+                onClick={() => setEye(!eye)}
+                className="absolute top-2 right-6 z-10 p-2 cursor-pointer"
+              >
+                {eye ? <FaRegEye /> : <FaRegEyeSlash />}
+              </div>
+            </div>
             <span className="text-red-600">{validPass ? validPass : ""}</span>
             <button type="submit" className="btn btn-neutral mt-4">
               Register
@@ -97,7 +107,7 @@ const Register = () => {
           <GoogleLogin></GoogleLogin>
           <p>
             You haven an account? Please{" "}
-            <Link to="/register" className="text-blue-600 underline">
+            <Link to="/login" className="text-blue-600 underline">
               LogIn here
             </Link>
           </p>
