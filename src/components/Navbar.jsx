@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { MdMenu } from "react-icons/md";
 import { Link, NavLink } from "react-router";
 import navLogo from '../assets/roommateLogo.png'
+import { AuthContext } from "../Layout/AuthProvider";
 
 const Navbar = () => {
+  const { user } = useContext(AuthContext)
+  console.log(user);
   const link = (
     <>
       <NavLink to="/" className="font-semibold px-2 ">
@@ -37,6 +40,9 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{link}</ul>
       </div>
       <div className="navbar-end">
+        <div className="mx-2">
+          <img className="size-10 rounded-full my-2" src={user.photoURL && user.photoURL} alt="" />
+        </div>
         <Link to='/login' className="btn bg-green-500 font-extrabold text-white ">LogIn</Link>
       </div>
     </div>
