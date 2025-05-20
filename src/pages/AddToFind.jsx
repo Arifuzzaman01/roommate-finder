@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState } from "react";
 import Swal from "sweetalert2";
+import { AuthContext } from "../Layout/AuthProvider";
 
 const AddToFind = () => {
+  const { user } = useContext(AuthContext);
   const [roomType, setRoomType] = useState("");
   const [lifestyle, setLifeStyle] = useState("");
+  const [available, setAvailable] = useState("");
+  console.log(user);
   const handleChange = (e) => {
     e.preventDefault();
     setRoomType(e.target.value);
@@ -13,12 +17,16 @@ const AddToFind = () => {
     e.preventDefault();
     setLifeStyle(e.target.value);
   };
+  const handleAvailable = (e) => {
+    e.preventDefault();
+    setAvailable(e.target.value);
+  };
   const handleAddToFind = (e) => {
     e.preventDefault();
     // console.log(roomType, lifestyle);
     const form = e.target;
     const formData = new FormData(form);
-    const { name, email, location, details, title, contact } =
+    const { name, email, location, details, title, contact, amount } =
       Object.fromEntries(formData);
 
     const postedData = {
@@ -28,8 +36,10 @@ const AddToFind = () => {
       roomType,
       lifestyle,
       contact,
+      amount,
       location,
       details,
+      available,
     };
     fetch("http://localhost:3000/users", {
       method: "POST",
@@ -43,12 +53,16 @@ const AddToFind = () => {
         // console.log(data);
 
         Swal.fire({
-          position: "top-end",
+          position: "top",
           icon: "success",
           title: "Your work has been saved",
           showConfirmButton: false,
           timer: 1500,
         });
+        e.target.reset();
+        setRoomType("");
+        setLifeStyle("");
+        setAvailable("");
       });
   };
   return (
@@ -60,7 +74,7 @@ const AddToFind = () => {
           </h1>
           <form
             onSubmit={handleAddToFind}
-            className="fieldset grid grid-cols-1 md:grid-cols-2 gap-8"
+            className="fieldset flex flex-col md:grid grid-cols-2 gap-7 "
           >
             <div>
               <label className="label">Title</label>
@@ -84,12 +98,47 @@ const AddToFind = () => {
                 required
               />
             </div>
+            <div>
+              <label className="label">Your Full Name</label>
+              <br />
+              <input
+                type="text"
+                name="name"
+                value={user?.displayName}
+                className="input w-full"
+                placeholder="Your Full Name"
+                required
+              />
+            </div>
+            <div>
+              <label className="label">Email</label>
+              <br />
+              <input
+                type="email"
+                name="email"
+                value={user?.email}
+                className="input w-full"
+                placeholder="info@gmail.com"
+                required
+              />
+            </div>
+            <div>
+              <label className="label">Rent Amount</label>
+              <br />
+              <input
+                type="text"
+                name="amount"
+                className="input w-full"
+                placeholder="12300"
+                required
+              />
+            </div>
             {/* select room-type */}
             <div>
               <select
                 value={roomType}
                 onChange={handleChange}
-                className="select select-primary w-full"
+                className="select select-primary md:mt-4 w-full"
               >
                 <option value="" disabled>
                   Pick a Room Type
@@ -118,27 +167,19 @@ const AddToFind = () => {
             </div>
 
             <div>
-              <label className="label">Your Full Name</label>
-              <br />
-              <input
-                type="text"
-                name="name"
-                className="input w-full"
-                placeholder="Your Full Name"
-                required
-              />
+              <select
+                value={available}
+                onChange={handleAvailable}
+                className="select select-primary w-full"
+              >
+                <option value="" disabled>
+                  Availability
+                </option>
+                <option value="Night owl">Available</option>
+                <option value="Early bird ">Not available </option>
+              </select>
             </div>
-            <div>
-              <label className="label">Email</label>
-              <br />
-              <input
-                type="email"
-                name="email"
-                className="input w-full"
-                placeholder="info@gmail.com"
-                required
-              />
-            </div>
+
             <div className="col-span-2">
               <label className="label">Contact Info</label>
               <br />
