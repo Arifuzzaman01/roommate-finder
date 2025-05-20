@@ -12,7 +12,7 @@ const Navbar = () => {
       <NavLink to="/" className="font-semibold px-2 ">
         Home
       </NavLink>
-      <NavLink className="font-semibold px-2 ">Add to find Roommate</NavLink>
+      <NavLink to='/add-to-find' className="font-semibold px-2 ">Add to find Roommate</NavLink>
       <NavLink className="font-semibold px-2 ">Brows Listing</NavLink>
       <NavLink className="font-semibold px-2 ">My Listing</NavLink>
     </>
@@ -41,7 +41,7 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
         <div className="mx-2">
-          <img className="size-10 rounded-full my-2" src={user.photoURL && user.photoURL} alt="" />
+          <img className="size-10 rounded-full my-2" src={user?.photoURL && user.photoURL} alt="" />
         </div>
         <Link to='/login' className="btn bg-green-500 font-extrabold text-white ">LogIn</Link>
       </div>

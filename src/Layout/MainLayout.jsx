@@ -1,13 +1,14 @@
-import React from 'react';
-import Header from '../components/Header';
+import React from "react";
+import { Outlet } from "react-router";
+import Navbar from "../components/Navbar";
 
 const MainLayout = () => {
-    return (
-        <div>
-            <Header></Header>
-            {/* <h1 className='text-color-primary'>Main Layout</h1> */}
-        </div>
-    );
+  return (
+    <div>
+     <Navbar></Navbar>
+      <Outlet></Outlet>
+    </div>
+  );
 };
 
 export default MainLayout;
