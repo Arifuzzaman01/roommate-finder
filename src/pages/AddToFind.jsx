@@ -55,7 +55,7 @@ const AddToFind = () => {
         Swal.fire({
           position: "top",
           icon: "success",
-          title: "Your work has been saved",
+          title: "Added Successfully",
           showConfirmButton: false,
           timer: 1500,
         });
