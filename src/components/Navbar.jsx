@@ -1,6 +1,7 @@
 import React from "react";
 import { MdMenu } from "react-icons/md";
 import { Link, NavLink } from "react-router";
+import navLogo from '../assets/roommateLogo.png'
 
 const Navbar = () => {
   const link = (
@@ -29,9 +30,7 @@ const Navbar = () => {
         </div>
         <a className="btn btn-ghost text-xl">
           {" "}
-          <span className="font-extrabold text-3xl -m-2">R</span>{" "}
-          <span className="text-green-700 font-bold">oommate</span>{" "}
-          <span className="font-extrabold text-2xl">Finder</span>{" "}
+          <img className="size-8" src={navLogo} alt="" />
         </a>
       </div>
       <div className="navbar-center hidden lg:flex">
