@@ -40,7 +40,7 @@ const MyListing = () => {
                 <td>{singleData.amount}</td>
                 <td>{singleData.location}</td>
                 <td className="flex">
-                  <Link to='/update' className="px-2 py-1 flex gap-1 items-center hover:bg-green-500 rounded-sm"><MdEdit /> Update</Link>
+                  <Link to={`/update/${singleData._id}`} className="px-2 py-1 flex gap-1 items-center hover:bg-green-500 rounded-sm"><MdEdit /> Update</Link>
                   <button className="px-2 py-1 flex gap-1 items-center hover:text-white hover:bg-red-500 rounded-sm"> <MdDelete /> Delete</button>
                 </td>
                 

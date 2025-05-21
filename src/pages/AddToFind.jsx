@@ -175,8 +175,8 @@ const AddToFind = () => {
                 <option value="" disabled>
                   Availability
                 </option>
-                <option value="Night owl">Available</option>
-                <option value="Early bird ">Not available </option>
+                <option value="Available">Available</option>
+                <option value="Not Available ">Not available </option>
               </select>
             </div>
 
@@ -192,12 +192,12 @@ const AddToFind = () => {
               />
             </div>
             <div className="col-span-2">
-              <label className="label">Your bio</label>
+              <label className="label">Write Details About as You Need</label>
               <br />
               <textarea
                 name="details"
                 className="textarea w-full h-24"
-                placeholder="Bio"
+                placeholder="Write Details About as You Need"
               ></textarea>
             </div>
             <button className="btn  bg-[#5EBB2B] mt-4 col-span-2 font-bold text-white">Add Roommate</button>

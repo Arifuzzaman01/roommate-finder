@@ -47,12 +47,19 @@ export const router = createBrowserRouter([
             {" "}
             <MyListing></MyListing>{" "}
           </PrivateRouter>
-        )
+        ),
       },
       {
-        path: "/update",
-          element: <PrivateRouter> <Update></Update> </PrivateRouter>
-        }
+        path: "/update/:id",
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/users/${params.id}`),
+        element: (
+          <PrivateRouter>
+            {" "}
+            <Update></Update>{" "}
+          </PrivateRouter>
+        ),
+      },
     ],
   },
   {
