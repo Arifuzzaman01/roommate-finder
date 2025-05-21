@@ -9,6 +9,7 @@ import Details from "./pages/Details";
 import PrivateRouter from "./Layout/PrivateRouter";
 import MyListing from "./pages/MyListing";
 import Update from "./pages/Update";
+import Error from "./pages/Error";
 
 export const router = createBrowserRouter([
   {
@@ -71,6 +72,7 @@ export const router = createBrowserRouter([
     Component: Register,
   },
   {
-    path: "/",
+    path: "*",
+    Component: Error
   },
 ]);
