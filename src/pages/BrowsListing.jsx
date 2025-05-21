@@ -1,56 +1,52 @@
 import React from "react";
-import { useLoaderData } from "react-router";
+import { Link, useLoaderData } from "react-router";
 
 const BrowsListing = () => {
   const allData = useLoaderData();
   // console.log(data);
   return (
     <div className="overflow-x-auto w-11/12 mx-auto py-10 bg-[#e8faf4]">
-      <table className="table">
+      <table className="md:table table-pin-rows ">
         {/* head */}
         <thead>
-          <tr>
+          <tr className="border-gray-700 ">
             <th>
-              
+             Room Title
             </th>
             <th>Name</th>
-            <th>Job</th>
-            <th>Favorite Color</th>
+            <th>Room type</th>
+            <th>Life Style</th>
+            
+            <th>Location</th>
+            <th>Details</th>
             <th></th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="border">
           {allData.map((data) => (
-            <tr>
-              <th>
-                
-              </th>
-              <td>
+            <tr className="border-gray-700">
+              
+              <td className="">
                 <div className="flex items-center gap-3">
-                  <div className="avatar">
-                    <div className="mask mask-squircle h-12 w-12">
-                      <img
-                        src="https://img.daisyui.com/images/profile/demo/2@94.webp"
-                        alt="Avatar Tailwind CSS Component"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <div className="font-bold">Hart Hagerty</div>
-                    <div className="text-sm opacity-50">United States</div>
-                  </div>
+                  <h3>{ data.title}</h3>
                 </div>
               </td>
               <td>
-                Zemlak, Daniel and Leannon
-                <br />
-                <span className="badge badge-ghost badge-sm">
-                  Desktop Support Technician
-                </span>
+                <h3>{ data.name}</h3>
               </td>
-              <td>Purple</td>
+              <td>
+                <h3>{ data.roomType}</h3>
+              </td>
+              <td>
+                <h3>{ data.lifestyle}</h3>
+              </td>
+              
+              <td>
+                <h3>{ data.location}</h3>
+              </td>
+              
               <th>
-                <button className="btn btn-ghost btn-xs">details</button>
+                <Link className=" hover:text-[15px] mx-2 hover:mx-0 hover:text-blue-700">See More</Link>
               </th>
             </tr>
           ))}
