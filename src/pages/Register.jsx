@@ -85,7 +85,7 @@ const Register = () => {
             <label className="label">Password</label>
             <div className="relative">
               <input
-                type="password"
+                type={eye ? "text" : "password"}
                 name="password"
                 className="input"
                 placeholder="Password"

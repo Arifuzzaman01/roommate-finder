@@ -6,6 +6,7 @@ import AddToFind from "./pages/AddToFind";
 import Header from "./components/Header";
 import BrowsListing from "./pages/BrowsListing";
 import Details from "./pages/Details";
+import PrivateRouter from "./Layout/PrivateRouter";
 
 export const router = createBrowserRouter([
   {
@@ -28,7 +29,7 @@ export const router = createBrowserRouter([
       {
         path: "/details/:id",
         loader:({params})=>fetch(`http://localhost:3000/users/${params.id}`),
-        Component: Details,
+        element: <PrivateRouter> <Details></Details> </PrivateRouter>
       },
     ],
   },
@@ -39,5 +40,7 @@ export const router = createBrowserRouter([
   {
     path: "/register",
     Component: Register,
-  },
+  }, {
+    path: '/'
+  }
 ]);

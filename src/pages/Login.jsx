@@ -1,13 +1,16 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../Layout/AuthProvider";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import GoogleLogin from "../components/GoogleLogin";
 import Navbar from "../components/Navbar";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 const Login = () => {
-    const { signInUser } = useContext(AuthContext);
-    const [eye,setEye]=useState(false)
+  const { signInUser } = useContext(AuthContext);
+  const [eye, setEye] = useState(false);
+  const [passError, setPassError] = useState("");
+  const navigator = useNavigate();
   const handleSignUser = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -17,11 +20,21 @@ const Login = () => {
     signInUser(email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        console.log(user);
+        // console.log(user);
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "LogIN Successfully",
+          showConfirmButton: false,
+          timer: 1000,
+        });
+        e.target.reset();
+        navigator(`${location.state ? location.state : "/"}`);
       })
       .catch((error) => {
-        console.log(error.message);
+        setPassError('Invalid email or password');
       });
+    setPassError('')
   };
 
   return (
@@ -42,7 +55,7 @@ const Login = () => {
             <label className="label">Password</label>
             <div className="relative">
               <input
-                type="password"
+                type={eye ? "text" : "password"}
                 name="password"
                 className="input"
                 placeholder="Password"
@@ -55,7 +68,7 @@ const Login = () => {
                 {eye ? <FaRegEye /> : <FaRegEyeSlash />}
               </div>
             </div>
-
+            <span className="text-red-600">{ passError ? passError : ''}</span>
             <button type="submit" className="btn btn-neutral mt-4">
               Login
             </button>
