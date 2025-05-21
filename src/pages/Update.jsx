@@ -5,8 +5,9 @@ import { useLoaderData } from "react-router";
 const Update = () => {
   const { user } = useContext(AuthContext);
   const elderData = useLoaderData();
-  console.log(elderData);
+  //   console.log(elderData,"elderData");
   const {
+    _id,
     title,
     amount,
     location,
@@ -40,19 +41,37 @@ const Update = () => {
     const { name, email, location, details, title, contact, amount } =
       Object.fromEntries(formData);
 
-    const postedData = {
+    const updateData = {
       title,
       name,
       email,
-      roomType:changeRoom,
-      lifestyle : changeLife,
+      roomType: changeRoom,
+      lifestyle: changeLife,
       contact,
       amount,
       location,
       details,
-      available : changeAva,
-      };
-      console.log(postedData);
+      available: changeAva,
+    };
+    //   console.log(postedData);
+    fetch(`http://localhost:3000/users/${_id}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updateData),
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("update Fail");
+        }
+      })
+      .then((data) => {
+        alert("Update successfully");
+      })
+      .catch((error) => {
+        alert(error.message || "Something went wrong");
+      });
   };
   console.log(changeRoom, changeLife, changeAva);
   return (
@@ -156,7 +175,6 @@ const Update = () => {
                 <option value="Night owl">Night owl</option>
                 <option value="Early bird ">Early bird </option>
                 <option value="Moderately clean">Moderately clean</option>
-                <option value="Very tidy">Very tidy</option>
                 <option value="Very tidy">Very tidy</option>
               </select>
             </div>

@@ -24,7 +24,7 @@ const BrowsListing = () => {
         </thead>
         <tbody className="border">
           {allData.map((data) => (
-            <tr className="border-gray-700">
+            <tr key={data._id} className="border-gray-700">
               
               <td className="">
                 <div className="flex items-center gap-3">
