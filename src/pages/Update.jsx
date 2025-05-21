@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../Layout/AuthProvider";
 import { useLoaderData } from "react-router";
+import Swal from "sweetalert2";
 
 const Update = () => {
   const { user } = useContext(AuthContext);
@@ -67,7 +68,13 @@ const Update = () => {
         }
       })
       .then((data) => {
-        alert("Update successfully");
+        Swal.fire({
+          position: "top",
+          icon: "success",
+          title: "Data Update Successfully",
+          showConfirmButton: false,
+          timer: 1000,
+        });
       })
       .catch((error) => {
         alert(error.message || "Something went wrong");
