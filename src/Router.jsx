@@ -5,6 +5,7 @@ import Register from "./pages/Register";
 import AddToFind from "./pages/AddToFind";
 import Header from "./components/Header";
 import BrowsListing from "./pages/BrowsListing";
+import Details from "./pages/Details";
 
 export const router = createBrowserRouter([
   {
@@ -23,6 +24,11 @@ export const router = createBrowserRouter([
         path: "/brows-listing",
         loader: () => fetch("http://localhost:3000/users"),
         Component: BrowsListing,
+      },
+      {
+        path: "/details/:id",
+        loader:({params})=>fetch(`http://localhost:3000/users/${params.id}`),
+        Component: Details,
       },
     ],
   },

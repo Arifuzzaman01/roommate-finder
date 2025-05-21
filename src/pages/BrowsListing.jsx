@@ -46,7 +46,7 @@ const BrowsListing = () => {
               </td>
               
               <th>
-                <Link className=" hover:text-[15px] mx-2 hover:mx-0 hover:text-blue-700">See More</Link>
+                <Link to={`/details/${data._id}`} className=" hover:text-[15px] mx-2 hover:mx-0 hover:text-blue-700">See More</Link>
               </th>
             </tr>
           ))}
