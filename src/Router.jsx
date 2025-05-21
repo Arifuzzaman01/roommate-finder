@@ -7,6 +7,8 @@ import Header from "./components/Header";
 import BrowsListing from "./pages/BrowsListing";
 import Details from "./pages/Details";
 import PrivateRouter from "./Layout/PrivateRouter";
+import MyListing from "./pages/MyListing";
+import Update from "./pages/Update";
 
 export const router = createBrowserRouter([
   {
@@ -28,9 +30,29 @@ export const router = createBrowserRouter([
       },
       {
         path: "/details/:id",
-        loader:({params})=>fetch(`http://localhost:3000/users/${params.id}`),
-        element: <PrivateRouter> <Details></Details> </PrivateRouter>
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/users/${params.id}`),
+        element: (
+          <PrivateRouter>
+            {" "}
+            <Details></Details>{" "}
+          </PrivateRouter>
+        ),
       },
+      {
+        path: "/my-listing",
+        loader: () => fetch("http://localhost:3000/users"),
+        element: (
+          <PrivateRouter>
+            {" "}
+            <MyListing></MyListing>{" "}
+          </PrivateRouter>
+        )
+      },
+      {
+        path: "/update",
+          element: <PrivateRouter> <Update></Update> </PrivateRouter>
+        }
     ],
   },
   {
@@ -40,7 +62,8 @@ export const router = createBrowserRouter([
   {
     path: "/register",
     Component: Register,
-  }, {
-    path: '/'
-  }
+  },
+  {
+    path: "/",
+  },
 ]);

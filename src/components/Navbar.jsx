@@ -14,7 +14,7 @@ const Navbar = () => {
       </NavLink>
       <NavLink to='/add-to-find' className="font-semibold px-2 ">Add to find Roommate</NavLink>
       <NavLink to='/brows-listing' className="font-semibold px-2 ">Brows Listing</NavLink>
-      <NavLink className="font-semibold px-2 ">My Listing</NavLink>
+      <NavLink to='/my-listing' className="font-semibold px-2 ">My Listing</NavLink>
     </>
   );
   return (
