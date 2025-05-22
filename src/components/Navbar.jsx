@@ -3,8 +3,9 @@ import { MdMenu } from "react-icons/md";
 import { Link, NavLink } from "react-router";
 import navLogo from '../assets/roommateLogo.png'
 import { AuthContext } from "../Layout/AuthProvider";
+import { IoMoonOutline, IoSunny, IoSunnyOutline } from "react-icons/io5";
 
-const Navbar = () => {
+const Navbar = ({changeTheme,setChangeTheme}) => {
   const { user } = useContext(AuthContext)
   // console.log(user);
   const link = (
@@ -40,6 +41,12 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{link}</ul>
       </div>
       <div className="navbar-end">
+        <button
+        onClick={() => setChangeTheme(!changeTheme)}
+        className="  text-white transition"
+      >
+         {changeTheme ? <IoSunny  className="text-white size-4" /> : <IoMoonOutline className="text-black size-4" />}
+      </button>
         <div className="mx-2">
           <img className="size-10 rounded-full my-2" src={user?.photoURL && user.photoURL} alt="" />
         </div>

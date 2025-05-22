@@ -20,7 +20,7 @@ const Header = () => {
   // console.log(showAll);
   return (
     <div>
-      <div className="bg-[#e8faf4] w-11/12 mx-auto">
+      <div className=" w-11/12 mx-auto">
         <Banner></Banner>
         <Slider></Slider>
         <div className="my-10 ">
