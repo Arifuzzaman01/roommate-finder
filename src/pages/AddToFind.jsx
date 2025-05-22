@@ -41,7 +41,7 @@ const AddToFind = () => {
       details,
       available,
     };
-    fetch("http://localhost:3000/users", {
+    fetch("https://roommate-finder-server-khaki.vercel.app/users", {
       method: "POST",
       headers: {
         "content-type": "application/json",

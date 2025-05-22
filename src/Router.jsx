@@ -26,13 +26,13 @@ export const router = createBrowserRouter([
       },
       {
         path: "/brows-listing",
-        loader: () => fetch("http://localhost:3000/users"),
+        loader: () => fetch("https://roommate-finder-server-khaki.vercel.app/users"),
         Component: BrowsListing,
       },
       {
         path: "/details/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/users/${params.id}`),
+          fetch(`https://roommate-finder-server-khaki.vercel.app/users/${params.id}`),
         element: (
           <PrivateRouter>
             {" "}
@@ -42,7 +42,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/my-listing",
-        loader: () => fetch("http://localhost:3000/users"),
+        loader: () => fetch("https://roommate-finder-server-khaki.vercel.app/users"),
         element: (
           <PrivateRouter>
             {" "}
@@ -53,7 +53,7 @@ export const router = createBrowserRouter([
       {
         path: "/update/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/users/${params.id}`),
+          fetch(`https://roommate-finder-server-khaki.vercel.app/${params.id}`),
         element: (
           <PrivateRouter>
             {" "}

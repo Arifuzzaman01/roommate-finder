@@ -29,7 +29,7 @@ const MyListing = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/users/${id}`, {
+        fetch(`https://roommate-finder-server-khaki.vercel.app/users/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

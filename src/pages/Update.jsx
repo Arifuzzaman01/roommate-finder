@@ -55,7 +55,7 @@ const Update = () => {
       available: changeAva,
     };
     //   console.log(postedData);
-    fetch(`http://localhost:3000/users/${_id}`, {
+    fetch(`https://roommate-finder-server-khaki.vercel.app/users/${_id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
