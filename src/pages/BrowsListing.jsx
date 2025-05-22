@@ -5,11 +5,12 @@ const BrowsListing = () => {
   const allData = useLoaderData();
   // console.log(data);
   return (
-    <div className="overflow-x-auto w-11/12 mx-auto py-10 bg-[#e8faf4]">
+    <div className="overflow-x-auto w-11/12 mx-auto py-10 ">
+      <h1 className="text-2xl font-bold text-center py-5">Brows Listing</h1>
       <table className="table table-pin-rows ">
         {/* head */}
         <thead >
-          <tr className="border-gray-700 ">
+          <tr className="border-gray-700 bg-gray-300 ">
             <th>
              Room Title
             </th>

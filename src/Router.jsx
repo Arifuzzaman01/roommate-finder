@@ -59,7 +59,7 @@ export const router = createBrowserRouter([
       {
         path: "/update/:id",
         loader: ({ params }) =>
-          fetch(`https://roommate-finder-server-khaki.vercel.app/${params.id}`),
+          fetch(`https://roommate-finder-server-khaki.vercel.app/users/${params.id}`),
         element: (
           <PrivateRouter>
             {" "}
