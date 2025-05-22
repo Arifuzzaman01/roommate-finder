@@ -13,11 +13,13 @@ import Error from "./pages/Error";
 
 export const router = createBrowserRouter([
   {
-    path: "",
+    path: "/",
     Component: MainLayout,
     children: [
       {
         index: true,
+        loader: () =>
+          fetch("https://roommate-finder-server-khaki.vercel.app/users"),
         Component: Header,
       },
       {
@@ -26,13 +28,16 @@ export const router = createBrowserRouter([
       },
       {
         path: "/brows-listing",
-        loader: () => fetch("https://roommate-finder-server-khaki.vercel.app/users"),
+        loader: () =>
+          fetch("https://roommate-finder-server-khaki.vercel.app/users"),
         Component: BrowsListing,
       },
       {
         path: "/details/:id",
         loader: ({ params }) =>
-          fetch(`https://roommate-finder-server-khaki.vercel.app/users/${params.id}`),
+          fetch(
+            `https://roommate-finder-server-khaki.vercel.app/users/${params.id}`
+          ),
         element: (
           <PrivateRouter>
             {" "}
@@ -42,7 +47,8 @@ export const router = createBrowserRouter([
       },
       {
         path: "/my-listing",
-        loader: () => fetch("https://roommate-finder-server-khaki.vercel.app/users"),
+        loader: () =>
+          fetch("https://roommate-finder-server-khaki.vercel.app/users"),
         element: (
           <PrivateRouter>
             {" "}
@@ -73,6 +79,6 @@ export const router = createBrowserRouter([
   },
   {
     path: "*",
-    Component: Error
+    Component: Error,
   },
 ]);
