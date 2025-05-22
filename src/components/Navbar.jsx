@@ -3,7 +3,7 @@ import { MdMenu } from "react-icons/md";
 import { Link, NavLink } from "react-router";
 import navLogo from '../assets/roommateLogo.png'
 import { AuthContext } from "../Layout/AuthProvider";
-import { IoMoonOutline, IoSunny, IoSunnyOutline } from "react-icons/io5";
+import { IoMoonOutline, IoSunny } from "react-icons/io5";
 
 const Navbar = ({changeTheme,setChangeTheme}) => {
   const { user } = useContext(AuthContext)

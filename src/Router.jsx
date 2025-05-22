@@ -24,13 +24,17 @@ export const router = createBrowserRouter([
       },
       {
         path: "/add-to-find",
-        Component: AddToFind,
+        element: <PrivateRouter>
+          <AddToFind></AddToFind>
+        </PrivateRouter>
       },
       {
         path: "/brows-listing",
         loader: () =>
           fetch("https://roommate-finder-server-khaki.vercel.app/users"),
-        Component: BrowsListing,
+        element: <PrivateRouter>
+          <BrowsListing></BrowsListing>
+        </PrivateRouter>
       },
       {
         path: "/details/:id",

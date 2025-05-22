@@ -1,16 +1,22 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../Layout/AuthProvider";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import GoogleLogin from "../components/GoogleLogin";
 import Navbar from "../components/Navbar";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import Swal from "sweetalert2";
+import Footer from "../components/Footer";
 
 const Login = () => {
   const { signInUser } = useContext(AuthContext);
   const [eye, setEye] = useState(false);
   const [passError, setPassError] = useState("");
   const navigator = useNavigate();
+  const location = useLocation();
+  // const from = location.state?.from?.pathname || "/";
+  console.log("location", location);
+  // console.log("from",from);
+
   const handleSignUser = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -19,8 +25,9 @@ const Login = () => {
 
     signInUser(email, password)
       .then((userCredential) => {
-        const user = userCredential.user;
+        // const user = userCredential.user;
         // console.log(user);
+        navigator(`${location.state ? location.state : "/"}`);
         Swal.fire({
           position: "top-end",
           icon: "success",
@@ -29,12 +36,12 @@ const Login = () => {
           timer: 1000,
         });
         e.target.reset();
-        navigator(`${location.state ? location.state : "/"}`);
+        // navigator(`${location.state ? location.state : "/"}`);
+        // navigator(from, { replace: true });
       })
       .catch((error) => {
-        setPassError('Invalid email or password');
+        setPassError("Invalid email or password");
       });
-    setPassError('')
   };
 
   return (
@@ -68,7 +75,7 @@ const Login = () => {
                 {eye ? <FaRegEye /> : <FaRegEyeSlash />}
               </div>
             </div>
-            <span className="text-red-600">{ passError ? passError : ''}</span>
+            <span className="text-red-600">{passError ? passError : ""}</span>
             <button type="submit" className="btn btn-neutral mt-4">
               Login
             </button>
@@ -83,6 +90,7 @@ const Login = () => {
           </p>
         </div>
       </div>
+      <Footer></Footer>
     </>
   );
 };

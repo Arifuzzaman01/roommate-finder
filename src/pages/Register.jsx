@@ -5,6 +5,7 @@ import { Link } from "react-router";
 import { AuthContext } from "../Layout/AuthProvider";
 import Swal from "sweetalert2";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
+import Footer from "../components/Footer";
 
 const Register = () => {
   const { createUser, setUser, user, updataUserProfile } =
@@ -113,6 +114,7 @@ const Register = () => {
           </p>
         </div>
       </div>
+      <Footer></Footer>
     </>
   );
 };

@@ -6,6 +6,7 @@ import Loader from '../pages/Loader';
 const PrivateRouter = ({ children }) => {
     const { user, loading } = useContext(AuthContext)
     const location = useLocation()
+    console.log(location.state);
     // console.log(location);
     if (loading) {
         return <Loader></Loader>
@@ -14,7 +15,9 @@ const PrivateRouter = ({ children }) => {
         return children 
     }
     return (
-        <Navigate state={location.pathname} to='/login'></Navigate>
+        
+        <Navigate to="/login" state={location.pathname} />
+
     );
 };
 
