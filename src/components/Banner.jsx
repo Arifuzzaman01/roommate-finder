@@ -8,7 +8,7 @@ import { Link } from "react-router";
 const Banner = () => {
   const {user}= useContext(AuthContext)
   return (
-    <div className="w-11/12 mx-auto py-10 md:flex gap-8 justify-between items-center ">
+    <div className=" py-10 md:flex gap-8 justify-between items-center ">
       <div>
         <h1 className="text-5xl font-bold  leading-18 ">
           Find Your Perfect Roommate <br /> Easy & Trusted Roommate
