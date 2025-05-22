@@ -6,9 +6,9 @@ const BrowsListing = () => {
   // console.log(data);
   return (
     <div className="overflow-x-auto w-11/12 mx-auto py-10 bg-[#e8faf4]">
-      <table className="md:table table-pin-rows ">
+      <table className="table table-pin-rows ">
         {/* head */}
-        <thead>
+        <thead >
           <tr className="border-gray-700 ">
             <th>
              Room Title

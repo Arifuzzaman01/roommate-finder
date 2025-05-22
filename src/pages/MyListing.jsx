@@ -50,9 +50,9 @@ const MyListing = () => {
   };
   return (
     <div className="flex justify-center items-center py-10">
-      <div className="overflow-x-auto flex flex-col items-center">
+      <div className="overflow-x-auto flex flex-col items-center justify-center">
         {/* <h1 className="text-3xl font-bold">{ user.displayName}</h1> */}
-        <h1 className="text-3xl font-bold"> My Total Listing -{data.length}</h1>
+        <h1 className="text-3xl font-bold py-5"> My Total Listing -{data.length}</h1>
         <table className="table border">
           {/* head */}
           {data.length === 0 ? (

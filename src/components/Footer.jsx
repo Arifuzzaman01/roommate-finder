@@ -21,7 +21,7 @@ const Footer = () => {
   );
   return (
     <footer className="footer footer-horizontal footer-center bg-gradient-to-b from-white to-green-600 text-base-content rounded p-10">
-      <nav className="grid grid-flow-col gap-4">{link}</nav>
+      <nav className="md:flex gap-3">{link}</nav>
       <nav>
         <div className="grid grid-flow-col gap-4">
           <a href="https://web.facebook.com/arifuzzaman.arif.98096721/?_rdc=2&_rdr#" target="blanc">

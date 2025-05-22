@@ -8,9 +8,9 @@ import { Link } from "react-router";
 const Banner = () => {
   const {user}= useContext(AuthContext)
   return (
-    <div className=" py-10 md:flex gap-8 justify-between items-center ">
+    <div className=" py-10 flex flex-col md:flex-row gap-8 justify-end md:justify-between items-center ">
       <div>
-        <h1 className="text-5xl font-bold  leading-18 ">
+        <h1 className="text-3xl md:text-5xl font-bold  leading-18 ">
           Find Your Perfect Roommate <br /> Easy & Trusted Roommate
         </h1>
         <div className="border-l-4 border-green-500 py-5 ">
@@ -22,7 +22,7 @@ const Banner = () => {
         </div>
       </div>
       <div className="relative">
-        <div className="card bg-base-100 w-96 shadow-sm">
+        <div className="card bg-base-100 w-72 text-right md:w-96 shadow-sm">
           <div className="flex gap-2">
             <img className="size-10 p-1 rounded-full" src={profile} alt="" />
               <p>Good User</p>
