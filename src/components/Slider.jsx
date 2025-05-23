@@ -10,7 +10,7 @@ import { Link } from "react-router";
 
 const Slider = () => {
   return (
-    <div className=" md:w-3/4 mx-auto ">
+    <div className=" md:w-2/5 mx-auto ">
       <Swiper
         // install Swiper modules
         spaceBetween={50}
@@ -28,7 +28,7 @@ const Slider = () => {
         <SwiperSlide>
           {/* 1 */}
           <div className="flex justify-center items-center h-full min-h-[400px] ">
-            <div className="card w-96 bg-base-100 shadow-sm">
+            <div className="card max-w-96 bg-base-100 shadow-sm">
               <div className="card-body border-gray-400 rounded-sm border">
                 <span className="badge badge-xs badge-warning">
                   Most Popular
@@ -65,7 +65,7 @@ const Slider = () => {
         <SwiperSlide>
           {/* 2 */}
           <div className="flex justify-center items-center h-full min-h-[400px]">
-            <div className="card w-96 bg-base-100 shadow-sm">
+            <div className="card max-w-96 bg-base-100 shadow-sm">
               <div className="card-body border-gray-400 rounded-sm border">
                 <span className="badge badge-xs badge-warning">
                   Most Popular
@@ -103,7 +103,7 @@ const Slider = () => {
         <SwiperSlide>
           {/* 3 */}
           <div className="flex justify-center items-center h-full min-h-[400px]">
-            <div className="card w-96 bg-base-100 shadow-md">
+            <div className="card max-w-96 bg-base-100 shadow-md">
               <div className="card-body border-gray-400 rounded-sm border">
                 <span className="badge badge-xs badge-warning">
                   Most Popular
@@ -143,7 +143,7 @@ const Slider = () => {
         <SwiperSlide>
           {/* 4 */}
           <div className="flex justify-center items-center h-full min-h-[400px]">
-            <div className="card w-96 bg-base-100 shadow-sm">
+            <div className="card max-w-96 bg-base-100 shadow-sm">
               <div className="card-body border-gray-400 rounded-sm border">
                 <span className="badge badge-xs badge-warning">
                   Most Popular

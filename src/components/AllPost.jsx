@@ -8,7 +8,7 @@ const AllPost = ({ data }) => {
   return (
     <div>
       
-      <div className="card card-border bg-base-100 border-white">
+      <div className="card card-border bg-base-300 shadow-2xl border-white">
         <div className="card-body">
           <h2 className="card-title">{title}</h2>
           <div className="grid grid-cols-2">

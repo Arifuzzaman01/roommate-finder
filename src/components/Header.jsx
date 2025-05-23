@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Banner from "./Banner";
 import CardSection from "./CardSection";
-import Slider from "./Slider";
 import AllPost from "./AllPost";
 import { useLoaderData } from "react-router";
+import Hero from "./Hero";
 
 const Header = () => {
   const postData = useLoaderData();
@@ -22,9 +22,9 @@ const Header = () => {
     <div>
       <div className=" w-11/12 mx-auto">
         <Banner></Banner>
-        <Slider></Slider>
+       
         <div className="my-10 ">
-          <h1 className="text-3xl font-bold text-center my-5 ">All Post</h1>
+          <h1 className="text-3xl font-bold text-center my-5 ">Featured Roommates Post </h1>
           <div className="md:grid grid-cols-3 gap-5">
             {showAllData.map((data) => (
               <AllPost key={data._id} data={data}></AllPost>
@@ -34,6 +34,7 @@ const Header = () => {
             {showAll ? "Show Less" : "Show All"}
           </button>
         </div>
+         <Hero></Hero>
         <CardSection></CardSection>
       </div>
     </div>

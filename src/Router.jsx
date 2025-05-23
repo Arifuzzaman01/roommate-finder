@@ -10,6 +10,7 @@ import PrivateRouter from "./Layout/PrivateRouter";
 import MyListing from "./pages/MyListing";
 import Update from "./pages/Update";
 import Error from "./pages/Error";
+import Condition from "./pages/Condition";
 
 export const router = createBrowserRouter([
   {
@@ -24,17 +25,17 @@ export const router = createBrowserRouter([
       },
       {
         path: "/add-to-find",
-        element: <PrivateRouter>
-          <AddToFind></AddToFind>
-        </PrivateRouter>
+        element: (
+          <PrivateRouter>
+            <AddToFind></AddToFind>
+          </PrivateRouter>
+        ),
       },
       {
         path: "/brows-listing",
         loader: () =>
           fetch("https://roommate-finder-server-khaki.vercel.app/users"),
-        element: <PrivateRouter>
-          <BrowsListing></BrowsListing>
-        </PrivateRouter>
+        element: <BrowsListing></BrowsListing>,
       },
       {
         path: "/details/:id",
@@ -63,7 +64,9 @@ export const router = createBrowserRouter([
       {
         path: "/update/:id",
         loader: ({ params }) =>
-          fetch(`https://roommate-finder-server-khaki.vercel.app/users/${params.id}`),
+          fetch(
+            `https://roommate-finder-server-khaki.vercel.app/users/${params.id}`
+          ),
         element: (
           <PrivateRouter>
             {" "}
@@ -84,5 +87,8 @@ export const router = createBrowserRouter([
   {
     path: "*",
     Component: Error,
-  },
+  }, {
+    path: '/conditions',
+    Component: Condition
+  }
 ]);

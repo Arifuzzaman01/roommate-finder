@@ -1,12 +1,38 @@
-# React + Vite
+# Roommate Finder Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Roommate Finder is a web application designed to help users easily find compatible roommates based on preferences like location, budget, and lifestyle.
 
-## Expanding the ESLint configuration
+##  Live Site
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+[https://your-live-site-url.com](https://your-live-site-url.com)
+
+## ✨ Features
+
+- **Advanced Search Filters**  
+  Users can filter results based on city, rent budget, gender preference, smoking habits, and more.
+
+- **User Profiles**  
+  Each user can create a detailed profile that includes bio, lifestyle preferences, and accommodation needs.
+
+
+-**Verified Accounts**  
+  Email or phone number verification is required to ensure authenticity and improve user safety.
+
+##  Technologies Used
+
+- HTML, CSS, Tailwind CSS
+- JavaScript / React 
+- Firebase , Node.js , Express ,Mongodb
+# npm package used
+
+-React-icon
+-SweetsAlert2
+-Swiper js
+
+used google font
+
+
+
+
