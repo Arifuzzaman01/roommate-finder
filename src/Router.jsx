@@ -20,7 +20,7 @@ export const router = createBrowserRouter([
       {
         index: true,
         loader: () =>
-          fetch("http://localhost:3000/users"),
+          fetch(`${import.meta.env.VITE_base_url}/users`),
         Component: Header,
       },
       {
@@ -34,14 +34,14 @@ export const router = createBrowserRouter([
       {
         path: "/brows-listing",
         loader: () =>
-          fetch("http://localhost:3000/users"),
+          fetch(`${import.meta.env.VITE_base_url}/users`),
         element: <BrowsListing></BrowsListing>,
       },
       {
         path: "/details/:id",
         loader: ({ params }) =>
           fetch(
-            `http://localhost:3000/users/${params.id}`
+            `${import.meta.env.VITE_base_url}/users/${params.id}`
           ),
         element: (
           <PrivateRouter>
@@ -65,7 +65,7 @@ export const router = createBrowserRouter([
         path: "/update/:id",
         loader: ({ params }) =>
           fetch(
-            `http://localhost:3000/users/${params.id}`
+            `${import.meta.env.VITE_base_url}/users/${params.id}`
           ),
         element: (
           <PrivateRouter>

@@ -31,7 +31,7 @@ const Footer = () => {
           <a href="https://web.facebook.com/arifuzzaman.arif.98096721/?_rdc=2&_rdr#" target="blanc">
             <FaFacebookF size={24} />
           </a>
-          <a href="#" >
+          <a href="https://www.youtube.com/" >
             <FaYoutube size={24} />
           </a>
           <a href="https://github.com/arifuzzaman01" target="blanc">
