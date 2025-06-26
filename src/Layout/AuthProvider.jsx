@@ -9,11 +9,12 @@ import {
 } from "firebase/auth";
 import React, { createContext, useEffect, useState } from "react";
 import { auth } from "../firebase/firebase.init";
+import axios from "axios";
 export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
   const provider = new GoogleAuthProvider();
   const [user, setUser] = useState(null);
-  const[loading,setLoading]= useState(true)
+  const [loading, setLoading] = useState(true);
   const signInUser = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
@@ -26,18 +27,26 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      setLoading(false)
+      setLoading(false);
+      if (currentUser?.email) {
+        axios
+          .post(`${import.meta.env.VITE_base_url}/jwt`, {
+            email: currentUser.email,
+          })
+          .then((res) => console.log(res.data))
+          .catch((err) => console.log(err));
+      }
     });
     return () => {
       unSubscribe();
     };
-  },[]);
+  }, []);
   const updataUserProfile = (updateUser) => {
-    return updateProfile(auth.currentUser,updateUser);
+    return updateProfile(auth.currentUser, updateUser);
   };
   const userLogOut = () => {
-    return signOut(auth)
-  }
+    return signOut(auth);
+  };
   const userInfo = {
     user,
     setUser,

@@ -17,6 +17,7 @@ const Details = () => {
     lifestyle,
     roomType,
     details,
+    amount
   } = data;
 
   const handleLike = () => {
@@ -30,7 +31,7 @@ const Details = () => {
       <div className="card bg-base-100 w-2/3 shadow-sm">
         <h2 className=" text-2xl font-bold text-center mt-10">{title}</h2>
         <div className="flex justify-center gap-8 mb-6">
-          <h3 className="font-bold">{name}</h3>
+          <h3 className="font-bold">Posted by : {name}</h3>
           <h3 className="text-gray-500">{email}</h3>
         </div>
         <figure>
@@ -64,6 +65,10 @@ const Details = () => {
               <tr>
                 <td>Room Details </td> <td>-</td>
                 <td colSpan={2}>{details}</td>
+              </tr>
+              <tr>
+                <td>Rent Amount </td> <td>-</td>
+                <td colSpan={2}>{amount}</td>
               </tr>
             </tbody>
           </table>

@@ -6,7 +6,7 @@ Roommate Finder is a web application designed to help users easily find compatib
 
 ##  Live Site
 
-[https://your-live-site-url.com](https://your-live-site-url.com)
+https://roommate-729c3.web.app/
 
 ## ✨ Features
 

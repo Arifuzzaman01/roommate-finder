@@ -14,15 +14,22 @@ const Navbar = ({ changeTheme, setChangeTheme }) => {
       <NavLink to="/" className="font-semibold px-2 ">
         Home
       </NavLink>
-      <NavLink to="/add-to-find" className="font-semibold px-2 ">
-        Add to find Roommate
+      <NavLink to="/about" className="font-semibold px-2 ">
+        About Us
       </NavLink>
-      <NavLink to="/brows-listing" className="font-semibold px-2 ">
-        Brows Listing
-      </NavLink>
-      <NavLink to="/my-listing" className="font-semibold px-2 ">
-        My Listing
-      </NavLink>
+      {user && (
+        <>
+          <NavLink to="/add-to-find" className="font-semibold px-2 ">
+            Add to find Roommate
+          </NavLink>
+          <NavLink to="/brows-listing" className="font-semibold px-2 ">
+            Brows Listing
+          </NavLink>
+          <NavLink to="/my-listing" className="font-semibold px-2 ">
+            My Listing
+          </NavLink>
+        </>
+      )}
     </>
   );
   const handleLogOut = () => {
@@ -102,7 +109,7 @@ const Navbar = ({ changeTheme, setChangeTheme }) => {
           </button>
         ) : (
           <div>
-            <Link 
+            <Link
               to="/register"
               className="btn bg-green-500 font-extrabold text-white hidden md:inline-block pt-2 "
             >

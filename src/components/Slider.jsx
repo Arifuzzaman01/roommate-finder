@@ -10,7 +10,7 @@ import { Link } from "react-router";
 
 const Slider = () => {
   return (
-    <div className=" md:w-2/5 mx-auto ">
+    <div className=" md:w-2/5  ">
       <Swiper
         // install Swiper modules
         spaceBetween={50}
@@ -27,8 +27,8 @@ const Slider = () => {
       >
         <SwiperSlide>
           {/* 1 */}
-          <div className="flex justify-center items-center h-full min-h-[400px] ">
-            <div className="card max-w-96 bg-base-100 shadow-sm">
+          <div className="flex justify-center items-center   ">
+            <div className="max-w-96 bg-base-100 shadow-sm">
               <div className="card-body border-gray-400 rounded-sm border">
                 <span className="badge badge-xs badge-warning">
                   Most Popular
@@ -38,13 +38,13 @@ const Slider = () => {
                 <span className="text-xl">BDT 1900/month</span>
                 <p className="text-[16px] font-bold">2-bedroom flat</p>
 
-                <ul className="mt-6 flex flex-col gap-2 text-xs">
-                  <li>Wi-Fi</li>
-                  <li>Washing Machine</li>
-                  <li>Kitchen Access</li>
-                  <li>24/7 Water</li>
-                  <li>Air Cooler</li>
-                  <li>Mini Parking</li>
+                <ul className="mt-3 flex flex-wrap gap-2 text-xs">
+                  <li># Wi-Fi</li>
+                  <li># Washing Machine</li>
+                  <li># Kitchen Access</li>
+                  <li># 24/7 Water</li>
+                  <li># Air Cooler</li>
+                  <li># Mini Parking</li>
                 </ul>
 
                 <div className="flex gap-2 flex-wrap text-sm mt-3">
@@ -53,7 +53,7 @@ const Slider = () => {
                   <div className="badge badge-outline">Kitchen</div>
                 </div>
 
-                <div className="mt-6 mb-2">
+                <div className="mt-3 mb-2">
                   <Link to='/add-to-find' className="btn btn-primary bg-[#5EBB2B] btn-block mb-2 ">
                     Add To Find
                   </Link>
@@ -64,7 +64,7 @@ const Slider = () => {
         </SwiperSlide>
         <SwiperSlide>
           {/* 2 */}
-          <div className="flex justify-center items-center h-full min-h-[400px]">
+          <div className="flex justify-center items-center ">
             <div className="card max-w-96 bg-base-100 shadow-sm">
               <div className="card-body border-gray-400 rounded-sm border">
                 <span className="badge badge-xs badge-warning">
@@ -75,13 +75,13 @@ const Slider = () => {
                 <span className="text-xl"> 3000 BDT/month</span>
                 <p className="text-[16px] font-bold">1-bedroom flat</p>
 
-                <ul className="mt-6 flex flex-col gap-2 text-xs">
-                  <li>Wi-Fi</li>
-                  <li>Washing Machine</li>
-                  <li>Kitchen Access</li>
-                  <li>24/7 Water</li>
-                  <li>Air Cooler</li>
-                  <li>Mini Parking</li>
+                <ul className="mt-3 flex flex-wrap gap-2 text-xs">
+                  <li># Wi-Fi</li>
+                  <li># Washing Machine</li>
+                  <li># Kitchen Access</li>
+                  <li># 24/7 Water</li>
+                  <li># Air Cooler</li>
+                  <li># Mini Parking</li>
                 </ul>
 
                 <div className="flex gap-2 flex-wrap text-sm mt-3">
@@ -91,7 +91,7 @@ const Slider = () => {
                   <div className="badge badge-outline">Parking</div>
                 </div>
 
-               <div className="mt-6 mb-2">
+               <div className="mt-3 mb-2">
                   <Link to='/add-to-find' className="btn btn-primary bg-[#5EBB2B] btn-block mb-2 ">
                     Add To Find
                   </Link>
@@ -102,7 +102,7 @@ const Slider = () => {
         </SwiperSlide>
         <SwiperSlide>
           {/* 3 */}
-          <div className="flex justify-center items-center h-full min-h-[400px]">
+          <div className="flex justify-center items-center ">
             <div className="card max-w-96 bg-base-100 shadow-md">
               <div className="card-body border-gray-400 rounded-sm border">
                 <span className="badge badge-xs badge-warning">
@@ -110,18 +110,18 @@ const Slider = () => {
                 </span>
 
                 <h2 className="text-3xl font-bold">
-                  Family Friendly Room Available
+                  Family Friendly Room 
                 </h2>
                 <span className="text-xl">BDT 12000/month</span>
                 <p className="text-[16px] font-bold">2-bedroom flat</p>
 
-                <ul className="mt-6 flex flex-col gap-2 text-xs">
-                  <li>Wi-Fi</li>
-                  <li>Washing Machine</li>
-                  <li>Kitchen Access</li>
-                  <li>24/7 Water</li>
-                  <li>Air Cooler</li>
-                  <li>Mini Parking</li>
+                <ul className="mt-3 flex flex-wrap  gap-2 text-xs">
+                  <li># Wi-Fi</li>
+                  <li># Washing Machine</li>
+                  <li># Kitchen Access</li>
+                  <li># 24/7 Water</li>
+                  <li># Air Cooler</li>
+                  <li># Mini Parking</li>
                 </ul>
 
                 <div className="flex gap-2 flex-wrap text-sm mt-3">
@@ -131,7 +131,7 @@ const Slider = () => {
                   <div className="badge badge-outline">Parking</div>
                 </div>
 
-                <div className="mt-6 mb-2">
+                <div className="mt-3 mb-2">
                   <Link to='/add-to-find' className="btn btn-primary bg-[#5EBB2B] btn-block mb-2 ">
                     Add To Find
                   </Link>
@@ -142,7 +142,7 @@ const Slider = () => {
         </SwiperSlide>
         <SwiperSlide>
           {/* 4 */}
-          <div className="flex justify-center items-center h-full min-h-[400px]">
+          <div className="flex justify-center items-center ">
             <div className="card max-w-96 bg-base-100 shadow-sm">
               <div className="card-body border-gray-400 rounded-sm border">
                 <span className="badge badge-xs badge-warning">
@@ -153,13 +153,13 @@ const Slider = () => {
                 <span className="text-xl">BDT 2500-sit/month</span>
                 <p className="text-[16px] font-bold">3-bedroom flat</p>
 
-                <ul className="mt-6 flex flex-col gap-2 text-xs">
-                  <li>Wi-Fi</li>
-                  <li>Washing Machine</li>
-                  <li>Kitchen Access</li>
-                  <li>24/7 Water</li>
-                  <li>Air Cooler</li>
-                  <li>Reading Environment</li>
+                <ul className="mt-3 flex flex-wrap gap-2 text-xs">
+                  <li># Wi-Fi</li>
+                  <li># Washing Machine</li>
+                  <li># Kitchen Access</li>
+                  <li># 24/7 Water</li>
+                  <li># Air Cooler</li>
+                  <li># Reading Environment</li>
                 </ul>
 
                 <div className="flex gap-2 flex-wrap text-sm mt-3">
@@ -168,7 +168,7 @@ const Slider = () => {
                   <div className="badge badge-outline">Kitchen</div>
                 </div>
 
-                <div className="mt-6 mb-2">
+                <div className="mt-3 mb-2">
                   <Link to='/add-to-find' className="btn btn-primary bg-[#5EBB2B] btn-block mb-2 ">
                     Add To Find
                   </Link>
