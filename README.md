@@ -6,7 +6,17 @@ Roommate Finder is a web application designed to help users easily find compatib
 
 ##  Live Site
 
+<<<<<<< HEAD
 https://roommate-729c3.web.app/
+=======
+[https://roommate-729c3.firebaseapp.com)
+
+## ✨ how to run local server
+-* add firebase auhtentication key
+-* command npm install
+_* command npm run dev
+
+>>>>>>> 19948be460c263dcaf56fbbd891a55e615f53743
 
 ## ✨ Features
 
