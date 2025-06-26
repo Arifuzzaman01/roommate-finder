@@ -5,6 +5,7 @@
   color: blue;
   text-decoration: underline;
   font-size: 16px;
+  margin-top: -4px;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&display=swap");

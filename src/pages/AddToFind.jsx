@@ -67,7 +67,7 @@ const AddToFind = () => {
   };
   return (
     <div className="flex justify-center items-center bg-[#e8faf4] py-10">
-      <div className="card bg-base-100 w-full md:max-w-2/3 shrink-0 shadow-2xl">
+      <div className="card bg-base-100 w-full md:max-w-4/5 shrink-0 shadow-2xl">
         <div className="card-body">
           <h1 className="text-3xl md:text-4xl text-center font-bold pt-5">
             Add To Find Your Roommate

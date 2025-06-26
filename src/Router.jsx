@@ -11,6 +11,8 @@ import MyListing from "./pages/MyListing";
 import Update from "./pages/Update";
 import Error from "./pages/Error";
 import Condition from "./pages/Condition";
+import About from "./pages/About";
+import DashboardLayout from "./Layout/DashboardLayout";
 
 export const router = createBrowserRouter([
   {
@@ -19,8 +21,7 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        loader: () =>
-          fetch(`${import.meta.env.VITE_base_url}/users`),
+        loader: () => fetch(`${import.meta.env.VITE_base_url}/users`),
         Component: Header,
       },
       {
@@ -33,16 +34,13 @@ export const router = createBrowserRouter([
       },
       {
         path: "/brows-listing",
-        loader: () =>
-          fetch(`${import.meta.env.VITE_base_url}/users`),
+        loader: () => fetch(`${import.meta.env.VITE_base_url}/users`),
         element: <BrowsListing></BrowsListing>,
       },
       {
         path: "/details/:id",
         loader: ({ params }) =>
-          fetch(
-            `${import.meta.env.VITE_base_url}/users/${params.id}`
-          ),
+          fetch(`${import.meta.env.VITE_base_url}/users/${params.id}`),
         element: (
           <PrivateRouter>
             {" "}
@@ -64,9 +62,7 @@ export const router = createBrowserRouter([
       {
         path: "/update/:id",
         loader: ({ params }) =>
-          fetch(
-            `${import.meta.env.VITE_base_url}/users/${params.id}`
-          ),
+          fetch(`${import.meta.env.VITE_base_url}/users/${params.id}`),
         element: (
           <PrivateRouter>
             {" "}
@@ -74,8 +70,31 @@ export const router = createBrowserRouter([
           </PrivateRouter>
         ),
       },
+      
     ],
   },
+  {
+    path: '/dashboard',
+    element: <PrivateRouter>
+      <DashboardLayout></DashboardLayout>
+    </PrivateRouter>,
+    children: [
+      {
+        index: true,
+        Component: MyListing
+      },
+      {
+        path: '/dashboard/update/:id',
+        Component: Update
+      }, {
+        path: 'details/:id',
+        Component: Details
+      }, {
+        path: 'add-to-find',
+        Component: AddToFind
+      }
+    ]
+},
   {
     path: "/login",
     Component: Login,
@@ -87,8 +106,9 @@ export const router = createBrowserRouter([
   {
     path: "*",
     Component: Error,
-  }, {
-    path: '/conditions',
-    Component: Condition
-  }
+  },
+  {
+    path: "/conditions",
+    Component: Condition,
+  },
 ]);
