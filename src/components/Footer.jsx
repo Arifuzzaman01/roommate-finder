@@ -1,12 +1,13 @@
 import React from "react";
 import { FaFacebookF, FaGithub, FaYoutube } from "react-icons/fa";
 import { Link, NavLink } from "react-router";
+import navLogo from "../assets/roommateLogo.png"
 
 const Footer = () => {
   const link = (
     <>
       <NavLink to="/" className="font-semibold px-2 ">
-        Home
+        <img className="size-8" src={navLogo} alt="" />
       </NavLink>
       <NavLink to="/add-to-find" className="font-semibold px-2 ">
         Add to find Roommate
